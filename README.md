@@ -54,8 +54,8 @@ minicoder                        # 进入 REPL,输入你的需求
 | `context.py` | 上下文系统 | **三层压缩**:50% 裁剪 / 70% 摘要旧轮 / 90% 紧急压缩 |
 | `tools/base.py` | 工具系统 | **fail-closed** 默认:工具默认不并发、不只读,要放宽须显式声明 |
 | `tools/bash.py` | 权限系统 | 危险命令正则门控(`rm -rf /`、fork bomb、`dd` 覆盖磁盘…) |
-| `providers.py` | — | Provider 抽象:**同时支持 Anthropic 与 OpenAI 兼容**后端 |
-| `session.py` | — | 会话保存/恢复 + 路径穿越防护 |
+| `providers.py` | 服务层 API 客户端 | 多 Provider 抽象 + 指数退避重试(对应 `client.ts` 多后端 / `withRetry.ts`):**同时支持 Anthropic 与 OpenAI 兼容** |
+| `session.py` | Transcript 持久化 | 会话保存/恢复,落盘崩溃安全(对应 QueryEngine 的 `recordTranscript()`)+ 路径穿越防护 |
 
 ## 配置
 
