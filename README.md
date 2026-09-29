@@ -105,13 +105,7 @@ REPL 斜杠命令:
 
 `bash` · `read_file` · `write_file` · `edit_file`(唯一文本匹配替换)· `glob` · `grep` · `agent`(子 agent,禁止递归)
 
-## 测试
 
-```bash
-pip install -e ".[dev]"
-pytest          # 26 个单测,全程 mock provider,不触真实 API
-ruff check .
-```
 
 ## 目录结构
 
